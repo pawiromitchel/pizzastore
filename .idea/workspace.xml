@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16f9d9fb-a487-4e1e-8af3-67f3bc878a04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/Builder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/app/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/builder/Builder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/OrderDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/ToppingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/ToppingDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Order.class" afterDir="false" />
@@ -47,15 +35,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="2724" />
-          <entry key="txt" value="23" />
+          <entry key="java" value="2758" />
+          <entry key="txt" value="92" />
           <entry key="xml" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2724" />
-          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="JAVA" value="2758" />
+          <entry key="PLAIN_TEXT" value="93" />
           <entry key="XML" value="41" />
         </counts>
       </usages-collector>
@@ -66,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
+            <state relative-caret-position="439">
+              <caret line="186" column="41" lean-forward="true" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4407#4416#0" expanded="true" />
@@ -301,7 +289,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579559372335" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579559415907" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -367,12 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1579553557775</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="busy with the flow, order can now be saved with toppings">
+      <created>1579559443836</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579559443836</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-27" width="2562" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14132166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -390,8 +384,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32982087" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003981" side_tool="true" weight="0.32982087" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32910052" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32910052" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32910052" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32910052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -405,7 +399,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add new classes and dao" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new classes and dao" />
+    <MESSAGE value="busy with the flow, order can now be saved with toppings" />
+    <option name="LAST_COMMIT_MESSAGE" value="busy with the flow, order can now be saved with toppings" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -643,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
+        <state relative-caret-position="439">
+          <caret line="186" column="41" lean-forward="true" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4407#4416#0" expanded="true" />
