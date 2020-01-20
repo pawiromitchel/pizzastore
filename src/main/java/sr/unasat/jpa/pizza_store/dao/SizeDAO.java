@@ -22,6 +22,16 @@ public class SizeDAO {
         return listRecords;
     }
 
+    public Size selectOne(int id){
+        entityManager.getTransaction().begin();
+        String jpql = "select e from Size e where id = :id";
+        TypedQuery<Size> query = entityManager.createQuery(jpql, Size.class);
+        query.setParameter("id", id);
+        Size size = query.getSingleResult();
+        entityManager.getTransaction().commit();
+        return size;
+    }
+
     public void insert(Size size){
         entityManager.getTransaction().begin();
         entityManager.persist(size);

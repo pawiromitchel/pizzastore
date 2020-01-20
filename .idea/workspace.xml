@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16f9d9fb-a487-4e1e-8af3-67f3bc878a04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/Builder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/app/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/builder/Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/OrderDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/ToppingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/dao/ToppingDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Size.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Size.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Topping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sr/unasat/jpa/pizza_store/entities/Topping.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,145 +34,43 @@
     <session id="-872050266">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="6" />
-          <entry key="xml" value="1" />
+          <entry key="java" value="38" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="6" />
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="38" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="356" />
+          <entry key="java" value="2724" />
+          <entry key="txt" value="23" />
+          <entry key="xml" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="356" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="2724" />
+          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="XML" value="41" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="383">
+              <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-              <folding>
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#341#342#0" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#402#403#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#466#467#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/PayPal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/UserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-              <folding>
-                <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#330#331#0" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#626#627#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
+                <element signature="e#4407#4416#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,8 +79,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="26" column="52" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#312#313#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/PayPal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="26" column="41" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#353#354#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -204,17 +163,17 @@
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/Builder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java" />
         <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java" />
       </list>
     </option>
   </component>
@@ -342,7 +301,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579553505896" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579559372335" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -401,13 +360,21 @@
       <option name="presentableId" value="Default" />
       <updated>1578863880107</updated>
     </task>
+    <task id="LOCAL-00001" summary="add new classes and dao">
+      <created>1579553557775</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579553557775</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-27" width="2562" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14132166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14132166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -416,15 +383,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996019" visible="true" weight="0.33015874" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996019" weight="0.33015874" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32982087" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003981" side_tool="true" weight="0.32982087" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32910052" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32910052" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32910052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -436,10 +403,11 @@
       <window_info anchor="right" id="Maven" order="8" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add new classes and dao" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new classes and dao" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/MasterCard.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -457,9 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/Payment.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pizzastore.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -470,9 +435,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1427#1428#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1885#1886#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="90">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="e#461#462#0" expanded="true" />
@@ -491,121 +513,6 @@
             <element signature="e#911#912#0" expanded="true" />
             <element signature="e#949#950#0" expanded="true" />
             <element signature="e#981#982#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1805#1806#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
-            <element signature="e#1946#1947#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/builder/PizzaBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/PayPal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Topping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,25 +538,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/OrderDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/PayPal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/Payment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/payments/MasterCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/ToppingDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/entities/Size.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        <state relative-caret-position="142">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#485#492#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
             <element signature="e#626#627#0" expanded="true" />
             <element signature="e#654#655#0" expanded="true" />
             <element signature="e#696#697#0" expanded="true" />
@@ -658,14 +629,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/TypeDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/dao/SizeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="240">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#303#304#0" expanded="true" />
             <element signature="e#353#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sr/unasat/jpa/pizza_store/app/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="181" column="56" selection-start-line="181" selection-start-column="56" selection-end-line="181" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4407#4416#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,7 @@
 package sr.unasat.jpa.pizza_store.entities;
 
+import sr.unasat.jpa.pizza_store.builder.PizzaBuilder;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,17 +12,16 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "size", nullable = false)
-    private String size;
+    @ManyToOne
+    @JoinColumn(name = "size")
+    private Size size;
 
     @Column(name = "payment", nullable = false)
     private String payment;
 
-    @Column(name = "crust", nullable = false)
-    private String crust;
-
-    @Column(name = "type", nullable = false)
-    private String type;
+    @ManyToOne
+    @JoinColumn(name = "type")
+    private Type type;
 
     @ManyToMany(cascade = CascadeType.PERSIST)
     @Column
@@ -31,13 +32,17 @@ public class Order {
     )
     private List<Topping> toppingList;
 
-    public Order(int id, String size, String payment, String crust, String type, List<Topping> toppingList) {
+
+    @Column(name = "price", nullable = false)
+    private double price;
+
+    public Order(int id, Size size, String payment, Type type, List<Topping> toppingList, double price) {
         this.id = id;
         this.size = size;
         this.payment = payment;
-        this.crust = crust;
         this.type = type;
         this.toppingList = toppingList;
+        this.price = price;
     }
 
     public int getId() {
@@ -48,11 +53,11 @@ public class Order {
         this.id = id;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Size size) {
         this.size = size;
     }
 
@@ -64,19 +69,11 @@ public class Order {
         this.payment = payment;
     }
 
-    public String getCrust() {
-        return crust;
-    }
-
-    public void setCrust(String crust) {
-        this.crust = crust;
-    }
-
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -88,14 +85,11 @@ public class Order {
         this.toppingList = toppingList;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", size='" + size + '\'' +
-                ", payment='" + payment + '\'' +
-                ", crust='" + crust + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

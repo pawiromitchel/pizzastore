@@ -22,6 +22,16 @@ public class ToppingDAO {
         return listRecords;
     }
 
+    public Topping selectOne(int id){
+        entityManager.getTransaction().begin();
+        String jpql = "select e from Topping e where id = :id";
+        TypedQuery<Topping> query = entityManager.createQuery(jpql, Topping.class);
+        query.setParameter("id", id);
+        Topping topping = query.getSingleResult();
+        entityManager.getTransaction().commit();
+        return topping;
+    }
+
     public void insert(Topping topping){
         entityManager.getTransaction().begin();
         entityManager.persist(topping);

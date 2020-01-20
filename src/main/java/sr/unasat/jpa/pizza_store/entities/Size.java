@@ -1,6 +1,8 @@
 package sr.unasat.jpa.pizza_store.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "sizes")
@@ -14,7 +16,10 @@ public class Size {
     private String size;
 
     @Column(name = "price", nullable = false)
-    private String price;
+    private double price;
+
+    @OneToMany(mappedBy = "size")
+    private Set<Order> orders = new HashSet<Order>();
 
     public int getId() {
         return id;
@@ -32,11 +37,11 @@ public class Size {
         this.size = size;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }

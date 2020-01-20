@@ -22,6 +22,16 @@ public class OrderDAO {
         return listRecords;
     }
 
+    public Order selectOne(int id){
+        entityManager.getTransaction().begin();
+        String jpql = "select e from Order e where id = :id";
+        TypedQuery<Order> query = entityManager.createQuery(jpql, Order.class);
+        query.setParameter("id", id);
+        Order order = query.getSingleResult();
+        entityManager.getTransaction().commit();
+        return order;
+    }
+
     public void insert(Order order){
         entityManager.getTransaction().begin();
         entityManager.persist(order);

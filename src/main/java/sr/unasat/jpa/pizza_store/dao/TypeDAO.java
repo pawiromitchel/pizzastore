@@ -22,6 +22,16 @@ public class TypeDAO {
         return listRecords;
     }
 
+    public Type selectOne(int id){
+        entityManager.getTransaction().begin();
+        String jpql = "select e from Type e where id = :id";
+        TypedQuery<Type> query = entityManager.createQuery(jpql, Type.class);
+        query.setParameter("id", id);
+        Type type = query.getSingleResult();
+        entityManager.getTransaction().commit();
+        return type;
+    }
+
     public void insert(Type type){
         entityManager.getTransaction().begin();
         entityManager.persist(type);
