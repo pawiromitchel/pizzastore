@@ -22,6 +22,11 @@ public class Application {
         System.out.println("Welkom bij pimp my pizza");
         System.out.println("Log AUB eerst in om gebruik te maken van de applicatie");
 
+        // start the login service
+        loginService();
+    }
+
+    static void loginService() {
         System.out.println("Vul hier uw gebruikersnaam in");
         Scanner usernameRead = new Scanner(System.in);
         String username = usernameRead.nextLine();
@@ -33,70 +38,82 @@ public class Application {
         UserDAO userDAO = new UserDAO(JPAConfiguration.getEntityManager());
         User user = userDAO.authUser(username, password);
 
-        if(user != null){
+        if (user != null) {
             System.out.println("Welkom bij het systeem");
-            if(user.getRole().getId() == 1){
-                System.out.println("Welkom terug Admin");
-                // EMPLOYEE
 
-                // RAPPORTAGES
-
-                // verschillende branches
-
-                // inkomsten per branche per kwartaal
-
-                // best selling per branche
-
-                // de 5 combinatie toppings per kwaartaal
+            // als de ingelogde user een admin is
+            if (user.getRole().getId() == 1) {
+                employeeService(user);
             } else {
-                System.out.println("Welkom gebruiker " + user.getUsername());
-                // GEBRUIKER
-
-                // kies de size van de pizza
-
-                System.out.println("Kies de grootte van de pizza");
-                Scanner sizeRead = new Scanner(System.in);
-                String size = sizeRead.nextLine();
-
-                // type pizza
-
-                System.out.println("Kies de type van de pizza");
-                Scanner typeRead = new Scanner(System.in);
-                String type = typeRead.nextLine();
-
-                // soort bodem
-
-                System.out.println("Kies de bodem van de pizza");
-                Scanner crustRead = new Scanner(System.in);
-                String crust = crustRead.nextLine();
-
-                // toppings > hoe moet ik dit doen?
-
-                // nog een bestelling plaatsen? > hoe moet ik dit doen?
-
-                // TEMPLATE PATTERN
-                Payment payment = null;
-                System.out.println("Kies de betalingsmethode.\n" +
-                        "1 - PayPal\n" +
-                        "2 - MasterCard");
-                Scanner paymentRead = new Scanner(System.in);
-                int choice = paymentRead.nextInt();
-
-                if(choice == 1){
-                    payment = new PayPal();
-                } else if(choice == 2){
-                    payment = new MasterCard();
-                }
-                payment.pay();
-
-                // BUILDER PATTERN
-                PizzaBuilder pizzaBuilder = new PizzaBuilder();
-                pizzaBuilder.setCrust(crust);
-                pizzaBuilder.setSize(size);
-                pizzaBuilder.setType(type);
+                userService(user);
             }
         } else {
             System.out.println("Gebruikersnaam of Wachtwoord niet juist, probeer opnieuw");
+            // start the logica opnieuw
+            loginService();
         }
+    }
+
+    static void employeeService(User user) {
+        System.out.println("Welkom terug Admin");
+        // EMPLOYEE
+
+        // RAPPORTAGES
+
+        // verschillende branches
+
+        // inkomsten per branche per kwartaal
+
+        // best selling per branche
+
+        // de 5 combinatie toppings per kwaartaal
+    }
+
+    static void userService(User user) {
+        System.out.println("Welkom gebruiker " + user.getUsername());
+        // GEBRUIKER
+
+        // kies de size van de pizza
+
+        System.out.println("Kies de grootte van de pizza");
+        Scanner sizeRead = new Scanner(System.in);
+        String size = sizeRead.nextLine();
+
+        // type pizza
+
+        System.out.println("Kies de type van de pizza");
+        Scanner typeRead = new Scanner(System.in);
+        String type = typeRead.nextLine();
+
+        // soort bodem
+
+        System.out.println("Kies de bodem van de pizza");
+        Scanner crustRead = new Scanner(System.in);
+        String crust = crustRead.nextLine();
+
+        // toppings > hoe moet ik dit doen?
+
+        // nog een bestelling plaatsen? > hoe moet ik dit doen?
+
+        // TEMPLATE PATTERN
+        Payment payment = null;
+        System.out.println("Kies de betalingsmethode.\n" +
+                "1 - PayPal\n" +
+                "2 - MasterCard");
+        Scanner paymentRead = new Scanner(System.in);
+        int choice = paymentRead.nextInt();
+
+        if (choice == 1) {
+            payment = new PayPal();
+        } else if (choice == 2) {
+            payment = new MasterCard();
+        }
+        payment.pay();
+
+        // BUILDER PATTERN
+        PizzaBuilder pizzaBuilder = new PizzaBuilder();
+        pizzaBuilder.setCrust(crust);
+        pizzaBuilder.setSize(size);
+        pizzaBuilder.setType(type);
     }
 }
