@@ -3,6 +3,7 @@ package sr.unasat.jpa.pizza_store.entities;
 import sr.unasat.jpa.pizza_store.builder.PizzaBuilder;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -23,6 +24,10 @@ public class Order {
     @JoinColumn(name = "type")
     private Type type;
 
+    @ManyToOne
+    @JoinColumn(name = "user")
+    private User user;
+
     @ManyToMany(cascade = CascadeType.PERSIST)
     @Column
     @JoinTable(
@@ -36,11 +41,18 @@ public class Order {
     @Column(name = "price", nullable = false)
     private double price;
 
-    public Order(int id, Size size, String payment, Type type, List<Topping> toppingList, double price) {
+    @Column(name = "date_created", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Timestamp dateCreated;
+
+    public Order() {
+    }
+
+    public Order(int id, Size size, String payment, Type type, User user, List<Topping> toppingList, double price) {
         this.id = id;
         this.size = size;
         this.payment = payment;
         this.type = type;
+        this.user = user;
         this.toppingList = toppingList;
         this.price = price;
     }
@@ -95,5 +107,17 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Timestamp getDateCreated() {
+        return dateCreated;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

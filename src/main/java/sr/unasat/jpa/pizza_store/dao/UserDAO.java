@@ -33,6 +33,16 @@ public class UserDAO {
         return user;
     }
 
+    public User selectOne(int id){
+        entityManager.getTransaction().begin();
+        String jpql = "select e from User e where id = :id";
+        TypedQuery<User> query = entityManager.createQuery(jpql, User.class);
+        query.setParameter("id", id);
+        User user = query.getSingleResult();
+        entityManager.getTransaction().commit();
+        return user;
+    }
+
     public void insert(User user){
         entityManager.getTransaction().begin();
         entityManager.persist(user);

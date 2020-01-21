@@ -41,7 +41,7 @@ public class Topping {
 
     @Override
     public String toString() {
-        return "ToppingDecorator{" +
+        return "Topping{" +
                 "id=" + id +
                 ", topping='" + topping + '\'' +
                 ", price=" + price +

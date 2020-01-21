@@ -1,9 +1,6 @@
 package sr.unasat.jpa.pizza_store.builder;
 
-import sr.unasat.jpa.pizza_store.entities.Order;
-import sr.unasat.jpa.pizza_store.entities.Size;
-import sr.unasat.jpa.pizza_store.entities.Topping;
-import sr.unasat.jpa.pizza_store.entities.Type;
+import sr.unasat.jpa.pizza_store.entities.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ public class PizzaBuilder {
     private String payment;
     private double price;
     private List<Topping> toppingList;
+    private User user;
 
     public void setSize(Size size) {
         this.size = size;
@@ -34,7 +32,11 @@ public class PizzaBuilder {
         this.toppingList = toppingList;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Order getResult(){
-        return new Order(0, size, payment, type, toppingList, price);
+        return new Order(0, size, payment, type, user, toppingList, price);
     }
 }

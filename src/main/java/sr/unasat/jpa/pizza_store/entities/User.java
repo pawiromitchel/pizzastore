@@ -1,6 +1,8 @@
 package sr.unasat.jpa.pizza_store.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -18,6 +20,9 @@ public class User {
     @OneToOne
     @JoinColumn(name="role_id")
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Order> orders = new HashSet<Order>();
 
     public int getId() {
         return id;
