@@ -32,10 +32,11 @@ public class OrderDAO {
         return order;
     }
 
-    public void insert(Order order){
+    public Order insert(Order order){
         entityManager.getTransaction().begin();
         entityManager.persist(order);
         entityManager.getTransaction().commit();
+        return order;
     }
 
     public void update(Order order) {

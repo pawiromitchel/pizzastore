@@ -85,6 +85,10 @@ public class Order {
         this.toppingList = toppingList;
     }
 
+    public void addToToppingList(Topping topping){
+        this.toppingList.add(topping);
+    }
+
     public double getPrice() {
         return price;
     }

@@ -3,6 +3,8 @@ package sr.unasat.jpa.pizza_store.app;
 import sr.unasat.jpa.pizza_store.builder.PizzaBuilder;
 import sr.unasat.jpa.pizza_store.config.JPAConfiguration;
 import sr.unasat.jpa.pizza_store.dao.*;
+import sr.unasat.jpa.pizza_store.decorator.BasicOrder;
+import sr.unasat.jpa.pizza_store.decorator.ExtraCheese;
 import sr.unasat.jpa.pizza_store.entities.*;
 import sr.unasat.jpa.pizza_store.payments.MasterCard;
 import sr.unasat.jpa.pizza_store.payments.PayPal;
@@ -14,12 +16,8 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-
         // start the login service
         loginService();
-
-        // testing
-//        testing();
     }
 
     static void loginService() {
@@ -121,11 +119,9 @@ public class Application {
         Type typeChosen = typeDAO.selectOne(type);
 
         // toppings uitkiezen
-
         boolean ready = false;
         double toppingPrice = 0;
         List<Topping> toppingListChosen = new ArrayList<Topping>();
-
         while (!ready) {
             System.out.println("Kies een topping voor jouw pizza");
             for(Topping topping : toppingList){
@@ -138,6 +134,9 @@ public class Application {
             toppingListChosen.add(toppingChosen);
             // add the price of the topping to the toppingPrice
             toppingPrice += toppingChosen.getPrice();
+
+            // DECORATOR PATTERN
+            sr.unasat.jpa.pizza_store.decorator.Order basicOrder = new ExtraCheese(new BasicOrder());
 
             System.out.println("Wilt u nog een topping uitkiezen?\n" +
                     "1. Ja\n" +
@@ -189,22 +188,7 @@ public class Application {
         pizzaBuilder.setPayment(paymentName);
         pizzaBuilder.setPrice(totalPrice);
         Order order = pizzaBuilder.getResult();
-        orderDAO.insert(order);
-        System.out.println("Uw order is opgeslagen");
-    }
-
-    static void testing(){
-
-        System.out.println("--- Welcome to debug mode ---");
-
-        // prepare the menu
-        SizeDAO sizeDAO = new SizeDAO(JPAConfiguration.getEntityManager());
-
-        List<Size> sizeList = sizeDAO.selectAll();
-
-        System.out.println("Kies uw pizza size");
-        for(Size size : sizeList){
-            System.out.println(size.getId() + ". " + size.getSize() + ", SRD " + size.getPrice());
-        }
+        Order insertedOrder = orderDAO.insert(order);
+        System.out.println("Uw order nummer is " + insertedOrder.getId());
     }
 }

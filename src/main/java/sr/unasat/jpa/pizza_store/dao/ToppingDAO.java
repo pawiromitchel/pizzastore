@@ -15,7 +15,7 @@ public class ToppingDAO {
 
     public List<Topping> selectAll() {
         entityManager.getTransaction().begin();
-        String jpql = "select e from Topping e";
+        String jpql = "select e from ToppingDecorator e";
         TypedQuery<Topping> query = entityManager.createQuery(jpql, Topping.class);
         List<Topping> listRecords = query.getResultList();
         entityManager.getTransaction().commit();
@@ -24,7 +24,7 @@ public class ToppingDAO {
 
     public Topping selectOne(int id){
         entityManager.getTransaction().begin();
-        String jpql = "select e from Topping e where id = :id";
+        String jpql = "select e from ToppingDecorator e where id = :id";
         TypedQuery<Topping> query = entityManager.createQuery(jpql, Topping.class);
         query.setParameter("id", id);
         Topping topping = query.getSingleResult();
