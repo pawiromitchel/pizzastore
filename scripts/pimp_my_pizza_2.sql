@@ -117,7 +117,7 @@ CREATE TABLE `orders` (
   CONSTRAINT `fk_orders_size` FOREIGN KEY (`size`) REFERENCES `sizes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_orders_type` FOREIGN KEY (`type`) REFERENCES `types` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_orders_user` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,3,'PayPal',5,112,'2018-11-21 21:07:46',3),(2,1,'PayPal',1,42,'2020-01-01 21:07:46',3),(3,2,'PayPal',3,45,'2019-01-20 21:07:46',3),(4,3,'PayPal',5,110,'2019-04-25 21:07:46',3),(5,3,'PayPal',5,110,'2020-01-20 21:28:30',3);
+INSERT INTO `orders` VALUES (1,3,'PayPal',5,112,'2018-11-21 21:07:46',3),(2,1,'PayPal',1,42,'2020-01-01 21:07:46',3),(3,2,'PayPal',3,45,'2019-01-20 21:07:46',3),(4,3,'PayPal',5,110,'2019-04-25 21:07:46',3),(5,3,'PayPal',5,110,'2020-01-20 21:28:30',3),(6,3,'PayPal',5,220,'2020-05-20 21:28:30',3),(7,3,'PayPal',5,130,'2020-01-20 21:28:30',3);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +219,7 @@ CREATE TABLE `toppings` (
   `price` double NOT NULL,
   `topping` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -313,12 +313,13 @@ SELECT
     types.type,
     COUNT(types.type) total_chosen,
     YEAR(date_created) AS year,
-    MONTH(date_created) AS month
+    QUARTER(date_created) AS quarter
 FROM
     orders
         INNER JOIN
     types ON types.id = orders.type
-GROUP BY types.type , YEAR(date_created) , MONTH(date_created);
+GROUP BY types.type , YEAR(date_created) , QUARTER(date_created)
+ORDER BY YEAR(date_created) , QUARTER(date_created);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -340,15 +341,24 @@ BEGIN
 SET @row_number = 0;
 SELECT 
 	(@row_number:=@row_number + 1) AS id,
-	toppings.topping,
-    COUNT(topping_id) as aantal_keren_uitgekozen
+    toppings,
+    count(t.id) as aantal,
+    YEAR(date_created) as year, 
+    quarter(date_created) as quarter
 FROM
-    order_topping
-        INNER JOIN
-    orders ON orders.id = order_topping.order_id
-		inner join
-	toppings on toppings.id = order_topping.topping_id
-GROUP BY topping_id;
+    (SELECT 
+        o.id,
+            o.date_created,
+            GROUP_CONCAT(DISTINCT t.topping
+                ORDER BY t.topping ASC
+                SEPARATOR ',') AS toppings
+    FROM
+        orders o
+    JOIN order_topping ot ON ot.order_id = o.id
+    JOIN toppings t ON t.id = ot.topping_id
+    GROUP BY o.id) AS t
+group by t.toppings, YEAR(date_created), quarter(date_created)
+order by YEAR(date_created), quarter(date_created);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -373,12 +383,12 @@ SELECT
     users.username, 
     SUM(price) AS total_income,
     YEAR(date_created) as year,
-    MONTH(date_created) AS month
+    QUARTER(date_created) AS quarter
 FROM
     orders
         INNER JOIN
     users ON users.id = orders.user
-GROUP BY users.id, YEAR(date_created) , MONTH(date_created);
+GROUP BY users.id, YEAR(date_created) , QUARTER(date_created);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -421,12 +431,12 @@ SET @row_number = 0;
 SELECT 
 	(@row_number:=@row_number + 1) AS id,
     YEAR(date_created) as year,
-    MONTH(date_created) AS month,
+    QUARTER(date_created) AS quarter,
     SUM(price) AS gross_income
 FROM
     orders
-GROUP BY YEAR(date_created) , MONTH(date_created)
-order by year, month;
+GROUP BY YEAR(date_created) , QUARTER(date_created)
+order by YEAR(date_created) , QUARTER(date_created);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -443,4 +453,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-20 23:40:38
+-- Dump completed on 2020-01-26 18:56:52
