@@ -3,8 +3,8 @@ package sr.unasat.jpa.pizza_store.app;
 import sr.unasat.jpa.pizza_store.builder.PizzaBuilder;
 import sr.unasat.jpa.pizza_store.config.JPAConfiguration;
 import sr.unasat.jpa.pizza_store.dao.*;
-import sr.unasat.jpa.pizza_store.decorator.BasicOrder;
-import sr.unasat.jpa.pizza_store.decorator.ExtraCheese;
+import sr.unasat.jpa.pizza_store.decorator.Toppings;
+import sr.unasat.jpa.pizza_store.decorator.ToppingsDecorator;
 import sr.unasat.jpa.pizza_store.entities.*;
 import sr.unasat.jpa.pizza_store.payments.MasterCard;
 import sr.unasat.jpa.pizza_store.payments.PayPal;
@@ -17,8 +17,7 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
         // start the login service
-        loginService();
-
+         loginService();
     }
 
     static void loginService() {
@@ -105,7 +104,7 @@ public class Application {
                 "1. Bestelling Management\n" +
                 "2. Analytics\n" +
                 "3. Gebruiker Management (Coming soon ...)\n" +
-                "4. Topping Mangement");
+                "4. Toppings Mangement");
         System.out.println("--- MENU ---");
         Scanner menuRead = new Scanner(System.in);
         int choice = menuRead.nextInt();
@@ -137,7 +136,7 @@ public class Application {
 
         System.out.println("Wat wilt u doen?\n" +
                 "1. Nieuwe topping toevoegen?\n" +
-                "2. Topping verwijderen");
+                "2. Toppings verwijderen");
         Scanner optionRead2 = new Scanner(System.in);
         int option2 = optionRead2.nextInt();
         switch(option2){
@@ -300,10 +299,17 @@ public class Application {
         int type = typeRead.nextInt();
         Type typeChosen = typeDAO.selectOne(type);
 
+        // BUILDER PATTERN PART 1
+        PizzaBuilder pizzaBuilder = new PizzaBuilder();
+        pizzaBuilder.setType(typeChosen);
+        pizzaBuilder.setSize(sizeChosen);
+        pizzaBuilder.setUser(user);
+        Order order = pizzaBuilder.getResult();
+
         // toppings uitkiezen
         boolean ready = false;
-        double toppingPrice = 0;
-        List<Topping> toppingListChosen = new ArrayList<Topping>();
+        ToppingsDecorator chosenToppings = new Toppings(order);
+
         while (!ready) {
             System.out.println("Kies een topping voor jouw pizza");
             for(Topping topping : toppingList){
@@ -313,12 +319,8 @@ public class Application {
             int topping = toppingRead.nextInt();
             Topping toppingChosen = toppingDAO.selectOne(topping);
 
-            toppingListChosen.add(toppingChosen);
-            // add the price of the topping to the toppingPrice
-            toppingPrice += toppingChosen.getPrice();
-
-//            // DECORATOR PATTERN
-//            sr.unasat.jpa.pizza_store.decorator.Order basicOrder = new ExtraCheese(new BasicOrder());
+            // DECORATOR PATTERN
+            ((Toppings) chosenToppings).setTopping(toppingChosen);
 
             System.out.println("Wilt u nog een topping uitkiezen?\n" +
                     "1. Ja\n" +
@@ -332,7 +334,7 @@ public class Application {
         }
 
         // calculate the total price
-        totalPrice = sizeChosen.getPrice() + typeChosen.getPrice() + toppingPrice;
+        totalPrice = sizeChosen.getPrice() + typeChosen.getPrice() + chosenToppings.getCosts();
 
         // TEMPLATE PATTERN
         Payment payment = null;
@@ -356,21 +358,16 @@ public class Application {
         System.out.println("Uitgekozen grootte: " + sizeChosen.getSize());
         System.out.println("Uitgekozen type: " + typeChosen.getType());
         System.out.println("Uitgekozen toppings: ");
-        for(Topping topping : toppingListChosen){
+        for(Topping topping : chosenToppings.getToppingList()){
             System.out.println("- " + topping.getTopping());
         }
         System.out.println("Totaal bedrag is SRD" + totalPrice);
         System.out.println("Uitgekozen betalingsmethode is " + paymentName);
 
-        // BUILDER PATTERN
-        PizzaBuilder pizzaBuilder = new PizzaBuilder();
-        pizzaBuilder.setType(typeChosen);
-        pizzaBuilder.setSize(sizeChosen);
-        pizzaBuilder.setToppingList(toppingListChosen);
+        // BUILDER PATTERN PART 2
+        pizzaBuilder.setToppingList(chosenToppings.getToppingList()); // add the chosen list to the order
         pizzaBuilder.setPayment(paymentName);
         pizzaBuilder.setPrice(totalPrice);
-        pizzaBuilder.setUser(user);
-        Order order = pizzaBuilder.getResult();
         Order insertedOrder = orderDAO.insert(order);
         System.out.println("Uw order nummer is " + insertedOrder.getId());
     }
