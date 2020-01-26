@@ -18,23 +18,7 @@ public class BestChosenPizza {
     private double year;
 
     @Column
-    private double month;
-
-    public String getType() {
-        return type;
-    }
-
-    public double getTotal_chosen() {
-        return total_chosen;
-    }
-
-    public double getYear() {
-        return year;
-    }
-
-    public double getMonth() {
-        return month;
-    }
+    private double quarter;
 
     @Override
     public String toString() {
@@ -42,7 +26,7 @@ public class BestChosenPizza {
                 "type='" + type + '\'' +
                 ", total_chosen=" + total_chosen +
                 ", year=" + year +
-                ", month=" + month +
+                ", quarter=" + quarter +
                 '}';
     }
 }

@@ -8,24 +8,25 @@ public class BestChosenToppings {
     private int id;
 
     @Column
-    private String topping;
+    private String toppings;
 
     @Column
-    private int aantal_keren_uitgekozen;
+    private int aantal;
 
-    public String getTopping() {
-        return topping;
-    }
+    @Column
+    private int year;
 
-    public int getAantal_keren_uitgekozen() {
-        return aantal_keren_uitgekozen;
-    }
+    @Column
+    private int quarter;
 
     @Override
     public String toString() {
         return "BestChosenToppings{" +
-                "topping='" + topping + '\'' +
-                ", aantal_keren_uitgekozen=" + aantal_keren_uitgekozen +
+                "id=" + id +
+                ", toppings='" + toppings + '\'' +
+                ", aantal=" + aantal +
+                ", year=" + year +
+                ", quarter=" + quarter +
                 '}';
     }
 }

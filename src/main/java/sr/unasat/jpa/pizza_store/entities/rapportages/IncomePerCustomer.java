@@ -18,23 +18,7 @@ public class IncomePerCustomer {
     private double year;
 
     @Column
-    private double month;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getTotal_income() {
-        return total_income;
-    }
-
-    public double getYear() {
-        return year;
-    }
-
-    public double getMonth() {
-        return month;
-    }
+    private double quarter;
 
     @Override
     public String toString() {
@@ -42,7 +26,7 @@ public class IncomePerCustomer {
                 "username='" + username + '\'' +
                 ", total_income='" + total_income + '\'' +
                 ", year=" + year +
-                ", month=" + month +
+                ", quarter=" + quarter +
                 '}';
     }
 }
